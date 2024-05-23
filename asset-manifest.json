@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Myths-in-English/static/css/main.b87514ff.css",
+    "main.js": "/Myths-in-English/static/js/main.5a9bc161.js",
+    "index.html": "/Myths-in-English/index.html",
+    "main.b87514ff.css.map": "/Myths-in-English/static/css/main.b87514ff.css.map",
+    "main.5a9bc161.js.map": "/Myths-in-English/static/js/main.5a9bc161.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b87514ff.css",
+    "static/js/main.5a9bc161.js"
+  ]
+}
