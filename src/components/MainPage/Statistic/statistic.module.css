@@ -1,0 +1,48 @@
+.main {
+  display: flex;
+  padding: 0 60px;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url(../../../img/fon.jpg);
+  /* background-image: url(../../../img/fon.jpg);
+  background-color: rgba(255, 255, 255, 0.5); */
+  background-size: cover; /* аналог object-fit: cover; */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.text {
+  padding-right: 100px;
+}
+.statistic {
+  width: 420px !important;
+  height: 420px !important;
+}
+
+.legendItem {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.legendItem::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  background-color: var(--circle-color, transparent); /* Динамічний колір */
+}
+
+.disabled::before {
+  background-color: gray; /* Колір для неактивного стану */
+}
+
+.disabled {
+  text-decoration: line-through;
+}

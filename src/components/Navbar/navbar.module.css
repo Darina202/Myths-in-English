@@ -1,0 +1,28 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 60px;
+  font-weight: 400;
+  font-size: 26px;
+}
+
+.menu {
+  display: flex;
+  gap: 114px;
+}
+
+.list {
+  display: flex;
+  gap: 40px;
+}
+
+.link {
+  text-decoration: none;
+  color: #000;
+}
+
+.prof {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
