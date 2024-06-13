@@ -13,7 +13,7 @@ const CreatureGallery = () => {
 
   useEffect(() => {
     dispatch(fetchCreature(galleryId, mythId));
-  }, [dispatch]);
+  }, [dispatch, galleryId, mythId]);
 
   const elements = creature.map(({ _id, image, creature_name }) => {
     return (
