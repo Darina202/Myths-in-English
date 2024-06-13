@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/Myths-in-English/static/css/main.b61655b6.css",
-    "main.js": "/Myths-in-English/static/js/main.315af314.js",
+    "main.js": "/Myths-in-English/static/js/main.88e982db.js",
     "static/media/back2.jpg": "/Myths-in-English/static/media/back2.395936b8cb3c8df2d62b.jpg",
     "static/media/fon.jpg": "/Myths-in-English/static/media/fon.a50c493e3466200e0364.jpg",
     "static/media/icons.svg": "/Myths-in-English/static/media/icons.ad9b37ca817139188668fe241fa1bb25.svg",
     "index.html": "/Myths-in-English/index.html",
     "main.b61655b6.css.map": "/Myths-in-English/static/css/main.b61655b6.css.map",
-    "main.315af314.js.map": "/Myths-in-English/static/js/main.315af314.js.map"
+    "main.88e982db.js.map": "/Myths-in-English/static/js/main.88e982db.js.map"
   },
   "entrypoints": [
     "static/css/main.b61655b6.css",
-    "static/js/main.315af314.js"
+    "static/js/main.88e982db.js"
   ]
 }
