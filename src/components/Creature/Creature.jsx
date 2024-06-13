@@ -29,7 +29,7 @@ const Creature = () => {
 
   useEffect(() => {
     dispatch(fetchCreature(galleryId, mythId));
-  }, [dispatch]);
+  }, [dispatch, galleryId, mythId]);
 
   return (
     <div className={styles.container}>

@@ -12,7 +12,7 @@ const MythGallery = () => {
 
   useEffect(() => {
     dispatch(fetchMyth(galleryId));
-  }, [dispatch]);
+  }, [dispatch, galleryId]);
 
   const elements = myth.map(({ _id, image, myth_name }) => {
     return (
