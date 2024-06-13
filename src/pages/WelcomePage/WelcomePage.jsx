@@ -1,9 +1,11 @@
+import { Link } from 'react-router-dom';
+
 const WelcomePage = () => {
   return (
     <div>
       <h1>WelcomePage</h1>
-      <button type="button">Register</button>
-      <button type="button">Login</button>
+      <Link to="/register">Register</Link>
+      <Link to="/register">Login</Link>
     </div>
   );
 };

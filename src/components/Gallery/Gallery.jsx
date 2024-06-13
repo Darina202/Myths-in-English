@@ -3,20 +3,30 @@ import styles from './gallery.module.css';
 import { useEffect } from 'react';
 import { fetchMythology } from '../../redux/myth/myth-operation';
 import { selectAllMythology } from '../../redux/myth/myth-selectors';
+import { Link } from 'react-router-dom';
 
 const Gallery = () => {
-  const { items } = useSelector(selectAllMythology);
+  const { mythology } = useSelector(selectAllMythology);
   const dispatch = useDispatch();
-  console.log(items);
+
   useEffect(() => {
     dispatch(fetchMythology());
   }, [dispatch]);
 
-  const elements = items.map(({ _id, image, mythology_name }) => {
+  const elements = mythology.map(({ _id, image, mythology_name }, index) => {
+    const isDisabled = index !== 0;
     return (
-      <li key={_id} className={styles.thumb}>
-        <img src={image} alt={mythology_name} className={styles.image} />
-        <p className={styles.text}>{mythology_name}</p>
+      <li
+        key={_id}
+        className={`${styles.thumb} ${isDisabled ? styles.disabled : ''}`}
+      >
+        <Link
+          to={`/gallery/${_id}`}
+          onClick={e => isDisabled && e.preventDefault()}
+        >
+          <img src={image} alt={mythology_name} className={styles.image} />
+          <p className={styles.text}>{mythology_name}</p>
+        </Link>
       </li>
     );
   });
@@ -24,65 +34,7 @@ const Gallery = () => {
   return (
     <div className={styles.myth}>
       <h1 className={styles.title}>Mythologies of the World</h1>
-      <ul className={styles.list}>
-        {elements}
-        {/* <li>
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4oMoZTAI38Qv8a0dbrptTIZPrkx5wN1lvc2MG5qBAWg&s"
-            alt="Slavic Mythology"
-          />
-          <p>Slavic Mythology</p>
-        </li>
-        <li>
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4oMoZTAI38Qv8a0dbrptTIZPrkx5wN1lvc2MG5qBAWg&s"
-            alt="Slavic Mythology"
-          />
-          <p>Greek Mythology</p>
-        </li>
-        <li>
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4oMoZTAI38Qv8a0dbrptTIZPrkx5wN1lvc2MG5qBAWg&s"
-            alt="Slavic Mythology"
-          />
-          <p>Roman Mythology</p>
-        </li>
-        <li>
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4oMoZTAI38Qv8a0dbrptTIZPrkx5wN1lvc2MG5qBAWg&s"
-            alt="Slavic Mythology"
-          />
-          <p>Norse Mythology</p>
-        </li>
-        <li>
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4oMoZTAI38Qv8a0dbrptTIZPrkx5wN1lvc2MG5qBAWg&s"
-            alt="Slavic Mythology"
-          />
-          <p>Japanese Mythology</p>
-        </li>
-        <li>
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4oMoZTAI38Qv8a0dbrptTIZPrkx5wN1lvc2MG5qBAWg&s"
-            alt="Slavic Mythology"
-          />
-          <p>Egyptian Mythology</p>
-        </li>
-        <li>
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4oMoZTAI38Qv8a0dbrptTIZPrkx5wN1lvc2MG5qBAWg&s"
-            alt="Slavic Mythology"
-          />
-          <p>Chinese Mythology</p>
-        </li>
-        <li>
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4oMoZTAI38Qv8a0dbrptTIZPrkx5wN1lvc2MG5qBAWg&s"
-            alt="Slavic Mythology"
-          />
-          <p>Hindu Mythology</p>
-        </li> */}
-      </ul>
+      <ul className={styles.list}>{elements}</ul>
     </div>
   );
 };

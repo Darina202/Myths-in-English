@@ -26,3 +26,12 @@
   gap: 40px;
   align-items: center;
 }
+
+.btn {
+  font-weight: 400;
+  font-size: 26px;
+  color: #000;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}

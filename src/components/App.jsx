@@ -1,4 +1,3 @@
-import { requestMythology } from '../api/myth-api.js';
 import ExercisePage from 'pages/ExercisePage/ExercisePage';
 import GalleryPage from 'pages/GalleryPage/GalleryPage';
 import HomePage from 'pages/HomePage/HomePage.jsx';
@@ -20,16 +19,6 @@ export const App = () => {
     dispatch(currentUser());
   }, [dispatch]);
 
-  requestMythology()
-    .then(data => {
-      // Логуємо отримані дані у консоль
-      console.log(data);
-    })
-    .catch(error => {
-      // Обробляємо помилки, якщо вони виникли під час виконання запиту
-      console.error('Помилка при виконанні запиту:', error);
-    });
-
   return (
     <div>
       <Routes>
@@ -37,7 +26,8 @@ export const App = () => {
         <Route element={<PrivateRoutes />}>
           <Route path="/home" element={<HomePage />} />
           <Route path="/ex" element={<ExercisePage />} />
-          <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/gallery/*" element={<GalleryPage />} />
+          {/* <Route path="/gallery/:galleryId" element={<GalleryList />} /> */}
         </Route>
         <Route element={<PublicRoutes />}>
           <Route path="register" element={<RegisterPage />} />

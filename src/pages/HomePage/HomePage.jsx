@@ -1,5 +1,5 @@
 import Navbar from 'components/Navbar/Navbar';
-import styles from './home-page.module.css';
+// import styles from './home-page.module.css';
 import MainPage from 'components/MainPage/MainPage';
 
 const HomePage = () => {

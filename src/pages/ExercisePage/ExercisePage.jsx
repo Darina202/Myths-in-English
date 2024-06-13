@@ -1,11 +1,12 @@
 import Navbar from 'components/Navbar/Navbar';
-import styles from './exercise-page.module.css';
+// import styles from './exercise-page.module.css';
+import Exercise from 'components/Exercise/Exercise';
 
 const ExercisePage = () => {
   return (
     <div>
       <Navbar />
-      <h1>ExercisePage</h1>
+      <Exercise />
     </div>
   );
 };

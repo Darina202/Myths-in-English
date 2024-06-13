@@ -43,3 +43,10 @@
 .text {
   width: 200px;
 }
+
+.disabled {
+  pointer-events: none;
+}
+.disabled .image {
+  opacity: 0.5;
+}

@@ -1,7 +1,42 @@
-/* .container {
-  padding: 0 60px;
+.container {
+  padding: 112px 60px;
 }
 
-.fon {
+/* .fon {
   background-image: url(../../img/fon.jpg);
 } */
+
+.title {
+  font-weight: 400;
+  font-size: 36px;
+}
+
+.theme {
+  font-weight: 400;
+  font-size: 32px;
+  margin-bottom: 32px;
+  margin-top: 40px;
+}
+
+.list li {
+  font-weight: 400;
+  font-size: 26px;
+  margin-bottom: 12px;
+}
+
+.button {
+  display: flex;
+  gap: 80px;
+  justify-content: center;
+  margin-top: 120px;
+}
+
+.link {
+  border-radius: 20px;
+  border: none;
+  font-weight: 400;
+  font-size: 32px;
+  padding: 35px 30px;
+  background: rgba(11, 189, 7, 0.5);
+  color: #000;
+}

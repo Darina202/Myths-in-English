@@ -51,8 +51,8 @@ const Statistic = () => {
   return (
     <div className={styles.main}>
       <div className={styles.text}>
-        <h3>Your progress</h3>
-        <p>
+        <h3 className={styles.title}>Your progress</h3>
+        <p className={styles.desc}>
           Learn without interruption and get achievements. You will succeed!
         </p>
         <ul>
