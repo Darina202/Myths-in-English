@@ -6,7 +6,6 @@ import icons from '../../img/icons.svg';
 
 const Exercise = () => {
   const { creature } = useSelector(selectAllMythology);
-  console.log(creature);
 
   const [languages, setLanguages] = useState(
     creature[0].description.map(() => 'eng')
@@ -44,9 +43,13 @@ const Exercise = () => {
           </p>
         </div>
       </div>
-      <div>
-        <img src="../../img/present.jpg" alt="pesent" width="360" />
-      </div>
+
+      <img
+        src="https://res.cloudinary.com/dqv2kepyf/image/upload/v1718350690/samples/present_sniw89.jpg"
+        alt="pesent"
+        width="360"
+        className={styles.image}
+      />
     </div>
   );
 };

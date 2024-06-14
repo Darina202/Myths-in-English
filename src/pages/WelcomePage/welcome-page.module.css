@@ -1,0 +1,38 @@
+.welcome {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 250px 90px;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url(../../img/back2.jpg) no-repeat center center;
+  background-size: cover;
+  /* font-weight: 400;
+  font-size: 36px; */
+}
+
+.title {
+  /* font-weight: 400; */
+  font-size: 36px;
+}
+
+.link {
+  border-radius: 20px;
+  border: none;
+  font-weight: 400;
+  font-size: 32px;
+  padding: 35px 50px;
+  background: rgba(11, 189, 7, 0.5);
+  color: #000;
+}
+
+.btn {
+  display: flex;
+  gap: 60px;
+  justify-content: center;
+  margin-top: 60px;
+}

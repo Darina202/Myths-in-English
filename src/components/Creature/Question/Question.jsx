@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './question.module.css';
+import { Link } from 'react-router-dom';
 
 const Questions = ({ test }) => {
   const [checked, setChecked] = useState(false);
@@ -77,9 +78,12 @@ const Questions = ({ test }) => {
       <h2>{test.title}</h2>
       {questions}
       <div className={styles.buttons}>
-        <button type="button" className={styles.checkBtn}>
+        <Link to="/gallery" className={styles.checkBtn}>
+          To gallery
+        </Link>
+        {/* <button type="button" className={styles.checkBtn}>
           Go back
-        </button>
+        </button> */}
         <input
           type="button"
           className={styles.checkBtn}
