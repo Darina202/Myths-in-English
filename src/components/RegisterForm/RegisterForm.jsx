@@ -2,7 +2,7 @@ import { useId, useState } from 'react';
 import styles from './register-form.module.css';
 
 const INITIAL_STATE = {
-  name: '',
+  username: '',
   email: '',
   password: '',
 };
@@ -28,7 +28,7 @@ const RegisterForm = ({ onSubmit }) => {
   const emailId = useId();
   const passwordId = useId();
 
-  const { name, email, password } = state;
+  const { username, email, password } = state;
 
   return (
     <div>
@@ -36,8 +36,8 @@ const RegisterForm = ({ onSubmit }) => {
         <div className={styles.field}>
           <label htmlFor="nameId">Username</label>
           <input
-            value={name}
-            name="name"
+            value={username}
+            name="username"
             id={nameId}
             onChange={handleChange}
             required
