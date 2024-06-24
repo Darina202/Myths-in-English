@@ -27,7 +27,6 @@ export const App = () => {
           <Route path="/home" element={<HomePage />} />
           <Route path="/ex" element={<ExercisePage />} />
           <Route path="/gallery/*" element={<GalleryPage />} />
-          {/* <Route path="/gallery/:galleryId" element={<GalleryList />} /> */}
         </Route>
         <Route element={<PublicRoutes />}>
           <Route path="register" element={<RegisterPage />} />

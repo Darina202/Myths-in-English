@@ -1,0 +1,21 @@
+.wrapper {
+  height: 100vh;
+  background-image: url('../../img/login-fon.jpg');
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  font-size: 36px;
+  margin-bottom: 40px;
+  font-weight: 400;
+}
+
+.error {
+  margin-bottom: 24px;
+  font-size: 24px;
+  color: red;
+}

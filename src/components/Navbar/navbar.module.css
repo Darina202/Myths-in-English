@@ -22,7 +22,9 @@
   text-decoration: none;
   color: #000;
 }
-
+.logo {
+  font-weight: 600;
+}
 .prof {
   display: flex;
   gap: 40px;

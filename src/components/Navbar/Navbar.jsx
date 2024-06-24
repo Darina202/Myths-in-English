@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import menuItems from './menu-items';
 import styles from './navbar.module.css';
 import { useDispatch, useSelector } from 'react-redux';
@@ -26,7 +26,9 @@ const Navbar = () => {
   return (
     <div className={styles.navbar}>
       <div className={styles.menu}>
-        <h3>LOGO</h3>
+        <Link to="/home" className={styles.logo}>
+          LOGO
+        </Link>
         <ul className={styles.list}>{elements}</ul>
       </div>
 

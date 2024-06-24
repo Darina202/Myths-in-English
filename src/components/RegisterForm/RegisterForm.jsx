@@ -1,5 +1,6 @@
 import { useId, useState } from 'react';
 import styles from './register-form.module.css';
+import { Link } from 'react-router-dom';
 
 const INITIAL_STATE = {
   username: '',
@@ -31,7 +32,7 @@ const RegisterForm = ({ onSubmit }) => {
   const { username, email, password } = state;
 
   return (
-    <div>
+    <>
       <form className={styles.form} onSubmit={handleSubmit}>
         <div className={styles.field}>
           <label htmlFor="nameId">Username</label>
@@ -69,10 +70,13 @@ const RegisterForm = ({ onSubmit }) => {
           Register
         </button>
       </form>
-      <h4>
-        Already have an account? <span>Sing in</span>
-      </h4>
-    </div>
+      <p className={styles.text}>
+        Already have an account?
+        <Link to="/login" className={styles.link}>
+          Sing in
+        </Link>
+      </p>
+    </>
   );
 };
 

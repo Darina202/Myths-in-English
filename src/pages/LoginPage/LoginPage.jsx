@@ -18,10 +18,10 @@ const LoginPage = () => {
 
   return (
     <div className={styles.wrapper}>
-      <h1 className={styles.text}>Please log in</h1>
-      {authLoading && <p>Register in progres</p>}
+      <h1 className={styles.text}>Sing In</h1>
+      {authLoading && <p>Login in progres</p>}
       <LoginForm onSubmit={handleSubmit} />
-      {authError && <p>{authError}</p>}
+      {authError && <p className={styles.error}>{authError}</p>}
     </div>
   );
 };

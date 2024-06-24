@@ -18,10 +18,10 @@ const RegisterPage = () => {
 
   return (
     <div className={styles.wrapper}>
-      <h1 className={styles.text}>Please sing up</h1>
+      <h1 className={styles.text}>Sing Up</h1>
       {authLoading && <p>Register in progres</p>}
       <RegisterForm onSubmit={handleSubmit} />
-      {authError && <p>{authError}</p>}
+      {authError && <p className={styles.error}>{authError}</p>}
     </div>
   );
 };

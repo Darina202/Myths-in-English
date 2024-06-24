@@ -1,5 +1,6 @@
 import { useId, useState } from 'react';
 import styles from './login-form.module.css';
+import { Link } from 'react-router-dom';
 
 const INITIAL_STATE = {
   email: '',
@@ -29,7 +30,7 @@ const LoginForm = ({ onSubmit }) => {
   const { email, password } = state;
 
   return (
-    <div>
+    <>
       <form className={styles.form} onSubmit={handleSubmit}>
         <div className={styles.field}>
           <label htmlFor="emailId">Email</label>
@@ -57,10 +58,13 @@ const LoginForm = ({ onSubmit }) => {
           Log In
         </button>
       </form>
-      <h4>
-        Don't have an account yet? <span> Sign Up</span>
-      </h4>
-    </div>
+      <p className={styles.text}>
+        Don't have an account yet?
+        <Link to="/register" className={styles.link}>
+          Sing in
+        </Link>
+      </p>
+    </>
   );
 };
 
