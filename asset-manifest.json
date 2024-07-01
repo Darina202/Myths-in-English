@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Myths-in-English/static/css/main.ac8fd88b.css",
-    "main.js": "/Myths-in-English/static/js/main.02c08382.js",
+    "main.css": "/Myths-in-English/static/css/main.dfa758ba.css",
+    "main.js": "/Myths-in-English/static/js/main.bd8d4c77.js",
     "static/media/back2.jpg": "/Myths-in-English/static/media/back2.395936b8cb3c8df2d62b.jpg",
     "static/media/fon.jpg": "/Myths-in-English/static/media/fon.a50c493e3466200e0364.jpg",
     "static/media/login-fon.jpg": "/Myths-in-English/static/media/login-fon.863b15665f9f5d7d18d4.jpg",
     "static/media/icons.svg": "/Myths-in-English/static/media/icons.ad9b37ca817139188668fe241fa1bb25.svg",
     "index.html": "/Myths-in-English/index.html",
-    "main.ac8fd88b.css.map": "/Myths-in-English/static/css/main.ac8fd88b.css.map",
-    "main.02c08382.js.map": "/Myths-in-English/static/js/main.02c08382.js.map"
+    "main.dfa758ba.css.map": "/Myths-in-English/static/css/main.dfa758ba.css.map",
+    "main.bd8d4c77.js.map": "/Myths-in-English/static/js/main.bd8d4c77.js.map"
   },
   "entrypoints": [
-    "static/css/main.ac8fd88b.css",
-    "static/js/main.02c08382.js"
+    "static/css/main.dfa758ba.css",
+    "static/js/main.bd8d4c77.js"
   ]
 }
