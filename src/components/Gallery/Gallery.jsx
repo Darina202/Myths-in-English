@@ -13,7 +13,7 @@ const Gallery = () => {
     dispatch(fetchMythology());
   }, [dispatch]);
 
-  const elements = mythology.map(({ _id, image, mythology_name }, index) => {
+  const elements = mythology.map(({ _id, image, mythology_name }) => {
     const isDisabled = _id !== '66687125084dd6ed8b9cd28c';
     return (
       <li

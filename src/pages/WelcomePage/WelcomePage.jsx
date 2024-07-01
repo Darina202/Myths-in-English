@@ -9,7 +9,7 @@ const WelcomePage = () => {
           <Link to="/register">Register</Link>
         </div>
         <div className={styles.link}>
-          <Link to="/register">Login</Link>
+          <Link to="/login">Login</Link>
         </div>
       </div>
     </div>
