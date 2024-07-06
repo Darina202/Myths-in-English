@@ -1,14 +1,28 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import styles from './exercise.module.css';
-import { selectAllMythology } from '../../redux/myth/myth-selectors';
-import { useState } from 'react';
+import {
+  selectMythError,
+  selectMythLoading,
+  selectRandomCreature,
+} from '../../redux/myth/myth-selectors';
+import { useEffect, useState } from 'react';
 import icons from '../../img/icons.svg';
+import { fetchRandomCreature } from '../../redux/myth/myth-operation';
 
 const Exercise = () => {
-  const { creature } = useSelector(selectAllMythology);
+  const creature = useSelector(selectRandomCreature);
+  const mythLoading = useSelector(selectMythLoading);
+  const mythError = useSelector(selectMythError);
+  const dispatch = useDispatch();
+
+  console.log(creature);
+
+  useEffect(() => {
+    dispatch(fetchRandomCreature());
+  }, [dispatch]);
 
   const [languages, setLanguages] = useState(
-    creature[0].description.map(() => 'eng')
+    creature?.description.map(() => 'eng') || []
   );
 
   const handleLanguageToggle = index => {
@@ -21,10 +35,11 @@ const Exercise = () => {
 
   return (
     <div className={styles.container}>
+      {mythLoading && <p>Login in progress</p>}
       <div className={styles.top}>
         <img
-          src={creature[0].picture}
-          alt={creature[0].creature_name}
+          src={creature.picture}
+          alt={creature.creature_name}
           className={styles.image}
         />
         <div className={styles.descr}>
@@ -38,18 +53,18 @@ const Exercise = () => {
           </button>
           <p className={styles.text}>
             {languages[0] === 'eng'
-              ? creature[0].description[0].eng_desc
-              : creature[0].description[0].ua_desc}
+              ? creature.description[0].eng_desc
+              : creature.description[0].ua_desc}
           </p>
         </div>
       </div>
-
       <img
         src="https://res.cloudinary.com/dqv2kepyf/image/upload/v1718350690/samples/present_sniw89.jpg"
-        alt="pesent"
+        alt="present"
         width="360"
         className={styles.image}
       />
+      {mythError && <p className={styles.error}>{mythError}</p>}
     </div>
   );
 };

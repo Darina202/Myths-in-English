@@ -1,10 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchMythology, fetchMyth, fetchCreature } from './myth-operation';
+import {
+  fetchMythology,
+  fetchMyth,
+  fetchCreature,
+  fetchRandomCreature,
+} from './myth-operation';
 
 const initialState = {
   mythology: [],
   myth: [],
   creature: [],
+  randomC: [],
   isLoading: false,
   error: null,
 };
@@ -41,7 +47,13 @@ const mythologySlice = createSlice({
         state.isLoading = false;
         state.creature = payload;
       })
-      .addCase(fetchCreature.rejected, handleRejected);
+      .addCase(fetchCreature.rejected, handleRejected)
+      .addCase(fetchRandomCreature.pending, handlePending)
+      .addCase(fetchRandomCreature.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.randomC = payload;
+      })
+      .addCase(fetchRandomCreature.rejected, handleRejected);
   },
 });
 

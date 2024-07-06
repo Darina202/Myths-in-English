@@ -3,6 +3,7 @@ import {
   requestCreature,
   requestMyth,
   requestMythology,
+  requestRandomCreature,
 } from '../../api/myth-api.js';
 
 export const fetchMythology = createAsyncThunk(
@@ -36,6 +37,19 @@ export const fetchCreature = createAsyncThunk(
   async (mythId, id, thunkAPI) => {
     try {
       const data = await requestCreature(mythId, id);
+      return data;
+    } catch (error) {
+      console.log(error);
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const fetchRandomCreature = createAsyncThunk(
+  'mythology/fetchRandomCreature',
+  async (_, thunkAPI) => {
+    try {
+      const data = await requestRandomCreature();
       return data;
     } catch (error) {
       console.log(error);
