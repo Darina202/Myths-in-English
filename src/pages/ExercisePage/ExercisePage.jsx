@@ -1,6 +1,6 @@
-import Navbar from 'components/Navbar/Navbar';
+import Navbar from '../../components/Navbar/Navbar';
 // import styles from './exercise-page.module.css';
-import Exercise from 'components/Exercise/Exercise';
+import Exercise from '../../components/Exercise/Exercise';
 
 const ExercisePage = () => {
   return (

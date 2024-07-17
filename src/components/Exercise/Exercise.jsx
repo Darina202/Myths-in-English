@@ -15,15 +15,18 @@ const Exercise = () => {
   const mythError = useSelector(selectMythError);
   const dispatch = useDispatch();
 
-  console.log(creature);
+  const [languages, setLanguages] = useState([]);
 
   useEffect(() => {
     dispatch(fetchRandomCreature());
   }, [dispatch]);
 
-  const [languages, setLanguages] = useState(
-    creature?.description.map(() => 'eng') || []
-  );
+  useEffect(() => {
+    if (creature && creature.description) {
+      console.log('Creature data:', creature);
+      setLanguages(creature.description.map(() => 'eng'));
+    }
+  }, [creature]);
 
   const handleLanguageToggle = index => {
     setLanguages(prevLanguages =>
@@ -33,13 +36,36 @@ const Exercise = () => {
     );
   };
 
+  if (!creature || !creature.description) {
+    return <div>Loading...</div>;
+  }
+
+  // useEffect(() => {
+  //   console.log('Component mounted');
+
+  //   dispatch(fetchRandomCreature());
+  // }, [dispatch]);
+
+  // console.log(creature);
+  // const [languages, setLanguages] = useState(
+  //   creature?.description.map(() => 'eng') || []
+  // );
+
+  // const handleLanguageToggle = index => {
+  //   setLanguages(prevLanguages =>
+  //     prevLanguages.map((lang, i) =>
+  //       i === index ? (lang === 'eng' ? 'ua' : 'eng') : lang
+  //     )
+  //   );
+  //};
+
   return (
     <div className={styles.container}>
       {mythLoading && <p>Login in progress</p>}
       <div className={styles.top}>
         <img
-          src={creature.picture}
-          alt={creature.creature_name}
+          src={creature?.picture}
+          alt={creature?.creature_name}
           className={styles.image}
         />
         <div className={styles.descr}>
@@ -53,8 +79,8 @@ const Exercise = () => {
           </button>
           <p className={styles.text}>
             {languages[0] === 'eng'
-              ? creature.description[0].eng_desc
-              : creature.description[0].ua_desc}
+              ? creature?.description[0].eng_desc
+              : creature?.description[0].ua_desc}
           </p>
         </div>
       </div>
