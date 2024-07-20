@@ -61,7 +61,7 @@ const Exercise = () => {
 
   return (
     <div className={styles.container}>
-      {mythLoading && <p>Login in progress</p>}
+      {mythLoading && <p>Loading in progress</p>}
       <div className={styles.top}>
         <img
           src={creature?.picture}

@@ -1,7 +1,5 @@
 .myth {
   padding: 60px;
-  /* background-image: url(../../img/back2.jpg);
-  opacity: 0.5; */
   background: linear-gradient(
       rgba(255, 255, 255, 0.5),
       rgba(255, 255, 255, 0.5)
@@ -49,4 +47,10 @@
 }
 .disabled .image {
   opacity: 0.5;
+}
+
+.error {
+  margin-bottom: 24px;
+  font-size: 24px;
+  color: red;
 }
